@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "clarity-api",
+			"path": "clarity-api"
+		},
+		{
+			"name": "clarity-web",
+			"path": "clarity-web"
+		},
+		{
+			"path": "clarity-react"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "clarity-react",
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"java.home": "/usr/java/jdk-17.0.1"
+	}
+}
