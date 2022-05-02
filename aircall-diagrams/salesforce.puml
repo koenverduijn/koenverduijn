@@ -1,0 +1,56 @@
+@startuml "Use Case Salesforce"
+'page setup'
+header Use Case UML
+footer Aircall Solutions Engineering
+title Salesforce & Aircall
+'participants'
+actor Agent
+box "Aircall" #00B388
+participant "Webhook"
+participant "Integration Manager" as IM
+participant "API"
+end box
+box "Salesforce" #LightBlue
+participant "SF API"
+end box
+'flow'
+== Call Started ==
+Agent -> Webhook: Outbound / Inbound call
+Webhook -> IM: call.created
+IM -> "API": POST /contacts/extracts
+return created contact
+IM -> "SF API": GET /services/.../User/:id
+return get SF user
+IM -> API: GET /users/:email
+return get Aircall user
+IM -> API: POST /calls/:id/insight_cards
+return update call insight card
+== Call Answered ==
+Agent -> Webhook: pick up call
+Webhook -> IM: call.answered
+IM -> "SF API": GET services/.../user presence
+return user available
+IM -> "SF API": GET services/.../user
+return user details
+IM -> "SF API": GET services/.../case by account ID
+return case details
+IM -> "SF API": GET services/.../Task/decribe
+return tasks scopes
+IM -> "SF API": POST services/.../Task
+return task
+== Call Hungup ==
+Agent -> Webhook: hang up
+Webhook -> IM: call.hung_up
+IM -> "SF API": GET services/.../user presence
+return user presence
+== Call Ended ==
+Agent -> Webhook: Wrap up completed
+Webhook -> IM: call.ended
+IM -> "SF API": GET services/.../Task/:id
+return task
+IM -> "SF API": GET services/.../Task/describe
+return tasks scopes
+IM -> "SF API": PATCH services/.../Task/:id
+return updated task
+note right: call duration,\nhandle time
+@enduml
