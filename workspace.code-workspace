@@ -5,6 +5,27 @@
 		},
 		{
 			"path": "../config-manager"
+		},
+		{
+			"path": "../recording-parser"
+		},
+		{
+			"path": "../hk-frontend"
+		},
+		{
+			"path": "../clarity-web"
+		},
+		{
+			"path": "../clarity-react"
+		},
+		{
+			"path": "../clarity-api"
+		},
+		{
+			"path": "../aircall-web"
+		},
+		{
+			"path": "../aircall-diagrams"
 		}
 	],
 	"settings": {}
