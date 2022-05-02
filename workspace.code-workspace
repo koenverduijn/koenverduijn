@@ -22,9 +22,6 @@
 			"path": "../clarity-api"
 		},
 		{
-			"path": "../aircall-web"
-		},
-		{
 			"path": "../aircall-diagrams"
 		}
 	],
