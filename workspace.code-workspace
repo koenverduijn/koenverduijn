@@ -23,6 +23,10 @@
 		},
 		{
 			"path": "../aircall-diagrams"
+		},
+		{
+			"name": "aircall",
+			"path": "../aircall"
 		}
 	],
 	"settings": {}
